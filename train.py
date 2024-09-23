@@ -12,7 +12,7 @@ def train_epoch(model, train_imgs, y_train, criterion, optimizer):
     color_criterion, cos_criterion = criterion
 
     # training
-    num_epochs = 100
+    num_epochs = 500
     for epoch in range(num_epochs):
         if torch.cuda.is_available():
             inputs = Variable(train_imgs).cuda()
