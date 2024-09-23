@@ -1,4 +1,4 @@
-# cv_tutorial
+# clothes_classification
 **This is my first project related to deep learning and computer vision. The task is to implement a complete multi-label classification about clothes.**
 
 Task description:
@@ -13,3 +13,5 @@ File description
 - train.py : Model training & testing.
 - main.py : Overall workflow.
 - myTutorial7.ipynb : A tutorial which I have personally practiced.
+
+If you are looking forward to getting started with computer vision, I highly recommend Prof. Wei's tutorials which really help me a lot.
