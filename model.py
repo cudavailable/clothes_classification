@@ -7,7 +7,7 @@ from collections import OrderedDict
 class Net(nn.Module):
     def __init__(self, num_color_classes, num_cos_classes):
         super().__init__()
-        self.net = models.resnet18(pretrained=True) # pretrained ResNet18 on ImageNet
+        self.net = models.resnet50(pretrained=True) # pretrained ResNet18 on ImageNet
         self.n_features = self.net.fc.in_features  # get the number of features in the last layer
         self.net.fc = nn.Identity() # replace the last layer without doing anything
 
@@ -15,12 +15,16 @@ class Net(nn.Module):
         self.net.fc1 = nn.Sequential(OrderedDict(
             [('linear', nn.Linear(self.n_features,self.n_features)),
             ('relu1', nn.ReLU()),
+            ('linear', nn.Linear(self.n_features,self.n_features)),
+            ('relu2', nn.ReLU()),
             ('final', nn.Linear(self.n_features, num_color_classes))]))
         
         # classification head based on clothes type
         self.net.fc2 = nn.Sequential(OrderedDict(
             [('linear', nn.Linear(self.n_features,self.n_features)),
             ('relu1', nn.ReLU()),
+            ('linear', nn.Linear(self.n_features,self.n_features)),
+            ('relu2', nn.ReLU()),
             ('final', nn.Linear(self.n_features, num_cos_classes))]))
 
         # freeze pretrained ResNet 
