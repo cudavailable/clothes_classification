@@ -66,6 +66,10 @@ def train_test_split(root, img_sets, images_info):
             else:
                 samples['val'].append(Sample(img=img, classPair=img_info['class'], labelList=img_info['label']))
 
+    # Samples shuffling
+    random.shuffle(samples['train'])
+    random.shuffle(samples['val'])
+
     return samples
 
 def img_transform(img_rgb, transform=None):
