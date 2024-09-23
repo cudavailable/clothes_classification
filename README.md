@@ -15,3 +15,4 @@ File description
 - myTutorial7.ipynb : A tutorial which I have personally practiced.
 
 If you are looking forward to getting started with computer vision, I highly recommend Prof. Wei's tutorials which really help me a lot.
+Tutorials : [lookwei/COMP4423: Course materials for COMP 4423 - Computer Vision for Beginners at the Hong Kong Polytechnic University (github.com)](https://github.com/lookwei/COMP4423)
